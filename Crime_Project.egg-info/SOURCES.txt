@@ -1,0 +1,7 @@
+README.md
+setup.py
+Crime_Project.egg-info/PKG-INFO
+Crime_Project.egg-info/SOURCES.txt
+Crime_Project.egg-info/dependency_links.txt
+Crime_Project.egg-info/top_level.txt
+src/__init__.py
