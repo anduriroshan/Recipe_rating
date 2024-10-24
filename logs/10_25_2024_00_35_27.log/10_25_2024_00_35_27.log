@@ -1,0 +1,3 @@
+[2024-10-25 00:35:27,531] 26 root - INFO - Connected to MySQL database using SQLAlchemy
+[2024-10-25 00:35:27,531] 33 root - INFO - Starting data ingestion method
+[2024-10-25 00:35:27,531] 36 root - INFO - Fetching data from MySQL

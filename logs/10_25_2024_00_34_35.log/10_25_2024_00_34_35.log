@@ -1,0 +1,1 @@
+[2024-10-25 00:34:35,186] 29 root - ERROR - Error while connecting to MySQL: No module named 'pymysql'
