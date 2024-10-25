@@ -141,23 +141,24 @@ class DataTransformation:
         try:
             train_df = pd.read_csv(train_path)
             test_df = pd.read_csv(test_path)
-            
+
             logging.info("Initial columns in train_df: %s", train_df.columns.tolist())
-            
+
             logging.info("Preprocessing crime data")
             train_df = self.preprocess_crimes(train_df)
             test_df = self.preprocess_crimes(test_df)
             logging.info("Columns after preprocess_crimes: %s", train_df.columns.tolist())
-            
+
             logging.info("Handling 'Modus_Operandi' column")
             train_df, vectorizer = self.process_modus_operandi(train_df)
             test_df, _ = self.process_modus_operandi(test_df, vectorizer)
             logging.info("Columns after process_modus_operandi: %s", train_df.columns.tolist())
-            
+
             logging.info("Normalizing numerical columns")
             numerical_cols = ['Area_ID', 'Latitude', 'Longitude', 'Victim_Age', 'DayOfYear', 'Days_Lapsed',
                             'Reporting_District_no', 'Premise_Code', 'Weapon_Used_Code', 'Day_Occurred',
                             'Day_Rep', 'PCode', 'Rep_Dist_no', 'WeekDay_Occurred', 'Hour_Occ', 'Month']
+            
             # Check if all numerical columns exist
             missing_num_cols = [col for col in numerical_cols if col not in train_df.columns]
             if missing_num_cols:
@@ -166,9 +167,10 @@ class DataTransformation:
                 
             train_df, test_df, scaler = self.normalize_data(train_df, test_df, numerical_cols)
             logging.info("Columns after normalize_data: %s", train_df.columns.tolist())
-            
+
             logging.info("Converting categorical columns to numerical")
             categorical_cols = ['Victim_Sex', 'Victim_Descent', 'Status']
+            
             # Check if all categorical columns exist
             missing_cat_cols = [col for col in categorical_cols if col not in train_df.columns]
             if missing_cat_cols:
@@ -177,48 +179,22 @@ class DataTransformation:
                 
             train_df, test_df = self.convert_categorical_to_numerical(train_df, test_df, categorical_cols)
             logging.info("Columns after convert_categorical_to_numerical: %s", train_df.columns.tolist())
-            
+
             # Check if Crime_Category exists before attempting to split
             if "Crime_Category" not in train_df.columns:
                 logging.error("Crime_Category column not found. Available columns: %s", train_df.columns.tolist())
                 raise ValueError("Crime_Category column not found in the dataset")
-                
-            # Print column names right before the split
-            logging.info("Final columns before split: %s", train_df.columns.tolist())
-            '''
-            target_column_name = "Crime_Category"
-            X_train = train_df.drop(columns=[target_column_name], axis=1)
-            y_train = train_df[target_column_name]
+
             
-            X_test = test_df.drop(columns=[target_column_name], axis=1)
-            y_test = test_df[target_column_name]
-            '''
+            
+
+            # Optionally return the split datasets if needed
             logging.info("Data preprocessing complete")
-            
+
             return train_df,test_df, self.data_transformation_config.preprocessor_obj_file_path
-            
+
         except Exception as e:
             logging.error("Error in initiate_data_transformation: %s", str(e))
             raise CustomException(e, sys)
 
-if __name__ == "__main__":
-    try:
-        # Path to your train and test CSV files
-        # File paths
-        train_path = os.path.join(os.getcwd(), "data_source", "train.csv")
-        test_path = os.path.join(os.getcwd(), "data_source", "test.csv")
 
-        
-        # Create an instance of DataTransformation
-        data_transformer = DataTransformation()
-        
-        # Run the data transformation process
-        train_df,test_df, preprocessor_path = data_transformer.initiate_data_transformation(train_path, test_path)
-        
-        print("Data Transformation Completed.")
-        print("Train data shape:", train_df.shape)
-        print("Test data shape:", test_df.shape)
-        print("Preprocessor saved at:", preprocessor_path)
-
-    except Exception as e:
-        print(f"Error: {e}")
