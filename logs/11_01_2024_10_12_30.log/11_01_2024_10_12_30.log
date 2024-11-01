@@ -1,0 +1,25 @@
+[2024-11-01 10:12:31,201] 28 root - INFO - Connected to MySQL database using SQLAlchemy
+[2024-11-01 10:12:31,201] 35 root - INFO - Starting data ingestion method
+[2024-11-01 10:12:31,201] 38 root - INFO - Fetching train data from MySQL
+[2024-11-01 10:12:31,219] 41 root - INFO - Train data fetched and converted to DataFrame
+[2024-11-01 10:12:31,234] 46 root - INFO - Train-validation split initiated
+[2024-11-01 10:12:31,235] 53 root - INFO - Fetching test data from MySQL
+[2024-11-01 10:12:31,235] 56 root - INFO - Test data fetched and converted to DataFrame
+[2024-11-01 10:12:31,252] 62 root - INFO - Data ingestion completed
+[2024-11-01 10:12:31,268] 67 root - INFO - Train and test data loaded successfully.
+[2024-11-01 10:12:31,268] 54 root - INFO - Preprocessor pipeline created successfully.
+[2024-11-01 10:12:31,268] 71 root - INFO - Preprocessing object obtained.
+[2024-11-01 10:12:31,268] 83 root - INFO - Applying preprocessing object to training and testing data.
+[2024-11-01 10:12:31,285] 91 root - INFO - Converting sparse training matrix to dense array
+[2024-11-01 10:12:31,285] 94 root - INFO - Converting sparse testing matrix to dense array
+[2024-11-01 10:12:31,285] 102 root - INFO - X_train_transformed shape: (418, 612)
+[2024-11-01 10:12:31,285] 103 root - INFO - y_train_arr shape: (418, 1)
+[2024-11-01 10:12:31,285] 104 root - INFO - X_test_transformed shape: (105, 612)
+[2024-11-01 10:12:31,285] 105 root - INFO - y_test_arr shape: (105, 1)
+[2024-11-01 10:12:31,285] 111 root - INFO - Final training array shape: (418, 613)
+[2024-11-01 10:12:31,285] 112 root - INFO - Final testing array shape: (105, 613)
+[2024-11-01 10:12:31,285] 119 root - INFO - Preprocessing object saved successfully.
+[2024-11-01 10:12:31,285] 110 root - INFO - Starting model training with improved parameters and class balancing
+[2024-11-01 10:12:31,285] 118 root - INFO - Class distribution in training data: [ 45   2   3  16  41 311]
+[2024-11-01 10:12:31,285] 158 root - INFO - Starting grid search with cross-validation
+[2024-11-01 10:12:36,419] 189 root - ERROR - Error in initiate_model_trainer: 'list' object has no attribute 'set_params'

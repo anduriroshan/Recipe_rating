@@ -1,6 +1,0 @@
-[2024-10-25 10:22:51,968] 145 root - INFO - Read train and test data completed
-[2024-10-25 10:22:51,968] 147 root - INFO - Preprocessing crime data
-[2024-10-25 10:22:52,109] 151 root - INFO - Handling 'Modus_Operandi' column
-[2024-10-25 10:22:52,359] 155 root - INFO - Normalizing numerical columns
-[2024-10-25 10:22:52,359] 161 root - INFO - Converting categorical columns to numerical
-[2024-10-25 10:22:52,391] 165 root - INFO - Separating target column (Crime_Category) from features

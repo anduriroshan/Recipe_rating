@@ -1,9 +1,0 @@
-[2024-10-25 00:39:33,038] 26 root - INFO - Connected to MySQL database using SQLAlchemy
-[2024-10-25 00:39:33,038] 33 root - INFO - Starting data ingestion method
-[2024-10-25 00:39:33,038] 36 root - INFO - Fetching train data from MySQL
-[2024-10-25 00:39:33,521] 39 root - INFO - Data fetched and converted to DataFrame
-[2024-10-25 00:39:33,650] 44 root - INFO - Train-test split initiated
-[2024-10-25 00:39:33,785] 49 root - INFO - Fetching test data from MySQL
-[2024-10-25 00:39:33,889] 52 root - INFO - Data fetched and converted to DataFrame
-[2024-10-25 00:39:33,921] 55 root - INFO - Train-test split initiated
-[2024-10-25 00:39:33,921] 56 root - INFO - Data ingestion completed

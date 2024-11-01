@@ -1,0 +1,17 @@
+[2024-11-01 09:49:27,952] 28 root - INFO - Connected to MySQL database using SQLAlchemy
+[2024-11-01 09:49:27,952] 35 root - INFO - Starting data ingestion method
+[2024-11-01 09:49:27,952] 38 root - INFO - Fetching train data from MySQL
+[2024-11-01 09:49:27,984] 41 root - INFO - Train data fetched and converted to DataFrame
+[2024-11-01 09:49:28,001] 46 root - INFO - Train-validation split initiated
+[2024-11-01 09:49:28,001] 53 root - INFO - Fetching test data from MySQL
+[2024-11-01 09:49:28,024] 56 root - INFO - Test data fetched and converted to DataFrame
+[2024-11-01 09:49:28,027] 62 root - INFO - Data ingestion completed
+[2024-11-01 09:49:28,046] 69 root - INFO - Train and test data read successfully.
+[2024-11-01 09:49:28,046] 70 root - INFO - Obtaining preprocessing object.
+[2024-11-01 09:49:28,046] 53 root - INFO - Preprocessor pipeline created successfully.
+[2024-11-01 09:49:28,046] 87 root - INFO - Applying preprocessing object on training and testing data.
+[2024-11-01 09:49:28,078] 98 root - INFO - Input feature train array shape: (418, 612)
+[2024-11-01 09:49:28,078] 99 root - INFO - Target feature train array shape: (418, 1)
+[2024-11-01 09:49:28,078] 100 root - INFO - Input feature test array shape: (105, 612)
+[2024-11-01 09:49:28,078] 101 root - INFO - Target feature test array shape: (105, 1)
+[2024-11-01 09:49:28,078] 131 root - ERROR - Error in initiate_data_transformation: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 0, the array at index 0 has size 1 and the array at index 1 has size 418

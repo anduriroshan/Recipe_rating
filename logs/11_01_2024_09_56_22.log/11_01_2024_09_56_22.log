@@ -1,0 +1,11 @@
+[2024-11-01 09:56:22,600] 28 root - INFO - Connected to MySQL database using SQLAlchemy
+[2024-11-01 09:56:22,600] 35 root - INFO - Starting data ingestion method
+[2024-11-01 09:56:22,600] 38 root - INFO - Fetching train data from MySQL
+[2024-11-01 09:56:22,631] 41 root - INFO - Train data fetched and converted to DataFrame
+[2024-11-01 09:56:22,647] 46 root - INFO - Train-validation split initiated
+[2024-11-01 09:56:22,647] 53 root - INFO - Fetching test data from MySQL
+[2024-11-01 09:56:22,662] 56 root - INFO - Test data fetched and converted to DataFrame
+[2024-11-01 09:56:22,662] 62 root - INFO - Data ingestion completed
+[2024-11-01 09:56:22,679] 67 root - INFO - Train and test data loaded successfully.
+[2024-11-01 09:56:22,679] 58 root - ERROR - Error in get_data_transformer_object: __init__() got an unexpected keyword argument 'sparse_output'
+[2024-11-01 09:56:22,679] 116 root - ERROR - Error in initiate_data_transformation: Error occured in python script [c:\users\rosha\downloads\recipe_rating\src\components\data_transformation.py] line number [48] error message [__init__() got an unexpected keyword argument 'sparse_output']

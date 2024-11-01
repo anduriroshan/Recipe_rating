@@ -1,0 +1,55 @@
+[2024-11-01 10:19:09,182] 28 root - INFO - Connected to MySQL database using SQLAlchemy
+[2024-11-01 10:19:09,182] 35 root - INFO - Starting data ingestion method
+[2024-11-01 10:19:09,182] 38 root - INFO - Fetching train data from MySQL
+[2024-11-01 10:19:09,213] 41 root - INFO - Train data fetched and converted to DataFrame
+[2024-11-01 10:19:09,213] 46 root - INFO - Train-validation split initiated
+[2024-11-01 10:19:09,213] 53 root - INFO - Fetching test data from MySQL
+[2024-11-01 10:19:09,229] 56 root - INFO - Test data fetched and converted to DataFrame
+[2024-11-01 10:19:09,229] 62 root - INFO - Data ingestion completed
+[2024-11-01 10:19:09,244] 67 root - INFO - Train and test data loaded successfully.
+[2024-11-01 10:19:09,244] 54 root - INFO - Preprocessor pipeline created successfully.
+[2024-11-01 10:19:09,244] 71 root - INFO - Preprocessing object obtained.
+[2024-11-01 10:19:09,244] 83 root - INFO - Applying preprocessing object to training and testing data.
+[2024-11-01 10:19:09,260] 91 root - INFO - Converting sparse training matrix to dense array
+[2024-11-01 10:19:09,260] 94 root - INFO - Converting sparse testing matrix to dense array
+[2024-11-01 10:19:09,260] 102 root - INFO - X_train_transformed shape: (418, 612)
+[2024-11-01 10:19:09,260] 103 root - INFO - y_train_arr shape: (418, 1)
+[2024-11-01 10:19:09,260] 104 root - INFO - X_test_transformed shape: (105, 612)
+[2024-11-01 10:19:09,260] 105 root - INFO - y_test_arr shape: (105, 1)
+[2024-11-01 10:19:09,260] 111 root - INFO - Final training array shape: (418, 613)
+[2024-11-01 10:19:09,260] 112 root - INFO - Final testing array shape: (105, 613)
+[2024-11-01 10:19:09,260] 119 root - INFO - Preprocessing object saved successfully.
+[2024-11-01 10:19:09,260] 26 root - INFO - Starting model training with class balancing through class weights
+[2024-11-01 10:19:09,260] 34 root - INFO - Class distribution in training data: [ 45   2   3  16  41 311]
+[2024-11-01 10:19:09,260] 119 root - INFO - Starting grid search with cross-validation
+[2024-11-01 10:19:14,238] 150 root - ERROR - Error in initiate_model_trainer: Invalid parameter 'stacking' for estimator StackingClassifier(cv=3,
+                   estimators=[('xgb',
+                                XGBClassifier(base_score=None, booster=None,
+                                              callbacks=None,
+                                              colsample_bylevel=None,
+                                              colsample_bynode=None,
+                                              colsample_bytree=0.8, device=None,
+                                              early_stopping_rounds=None,
+                                              enable_categorical=False,
+                                              eval_metric=None,
+                                              feature_types=None, gamma=None,
+                                              grow_policy=None,
+                                              importance_type=None,
+                                              interaction_constraints=None,
+                                              learn...
+                                               colsample_bytree=0.8,
+                                               max_depth=7, n_estimators=200,
+                                               random_state=42, subsample=0.8,
+                                               verbose=-1)),
+                               ('rf',
+                                RandomForestClassifier(class_weight='balanced',
+                                                       max_depth=7,
+                                                       min_samples_leaf=2,
+                                                       min_samples_split=5,
+                                                       n_estimators=200,
+                                                       random_state=42))],
+                   final_estimator=LogisticRegression(class_weight='balanced',
+                                                      max_iter=1000,
+                                                      multi_class='multinomial',
+                                                      random_state=42),
+                   n_jobs=-1). Valid parameters are: ['cv', 'estimators', 'final_estimator', 'n_jobs', 'passthrough', 'stack_method', 'verbose'].

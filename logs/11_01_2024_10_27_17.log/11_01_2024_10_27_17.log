@@ -1,0 +1,40 @@
+[2024-11-01 10:27:18,161] 28 root - INFO - Connected to MySQL database using SQLAlchemy
+[2024-11-01 10:27:18,161] 35 root - INFO - Starting data ingestion method
+[2024-11-01 10:27:18,161] 38 root - INFO - Fetching train data from MySQL
+[2024-11-01 10:27:18,192] 41 root - INFO - Train data fetched and converted to DataFrame
+[2024-11-01 10:27:18,208] 46 root - INFO - Train-validation split initiated
+[2024-11-01 10:27:18,208] 53 root - INFO - Fetching test data from MySQL
+[2024-11-01 10:27:18,223] 56 root - INFO - Test data fetched and converted to DataFrame
+[2024-11-01 10:27:18,223] 62 root - INFO - Data ingestion completed
+[2024-11-01 10:27:18,239] 67 root - INFO - Train and test data loaded successfully.
+[2024-11-01 10:27:18,239] 54 root - INFO - Preprocessor pipeline created successfully.
+[2024-11-01 10:27:18,239] 71 root - INFO - Preprocessing object obtained.
+[2024-11-01 10:27:18,239] 83 root - INFO - Applying preprocessing object to training and testing data.
+[2024-11-01 10:27:18,271] 91 root - INFO - Converting sparse training matrix to dense array
+[2024-11-01 10:27:18,271] 94 root - INFO - Converting sparse testing matrix to dense array
+[2024-11-01 10:27:18,271] 102 root - INFO - X_train_transformed shape: (418, 612)
+[2024-11-01 10:27:18,271] 103 root - INFO - y_train_arr shape: (418, 1)
+[2024-11-01 10:27:18,271] 104 root - INFO - X_test_transformed shape: (105, 612)
+[2024-11-01 10:27:18,271] 105 root - INFO - y_test_arr shape: (105, 1)
+[2024-11-01 10:27:18,271] 111 root - INFO - Final training array shape: (418, 613)
+[2024-11-01 10:27:18,271] 112 root - INFO - Final testing array shape: (105, 613)
+[2024-11-01 10:27:18,271] 119 root - INFO - Preprocessing object saved successfully.
+[2024-11-01 10:27:18,271] 26 root - INFO - Starting model training with advanced ensemble and hyperparameter tuning
+[2024-11-01 10:27:18,271] 88 root - INFO - Starting randomized search with cross-validation
+[2024-11-01 10:28:43,979] 95 root - INFO - Best Parameters: {'lgbm__learning_rate': 0.07433811359571317, 'lgbm__max_depth': 5, 'lgbm__n_estimators': 106, 'rf__max_depth': 3, 'rf__n_estimators': 276, 'xgb__learning_rate': 0.16632625506788917, 'xgb__max_depth': 7, 'xgb__n_estimators': 189}
+[2024-11-01 10:28:43,979] 96 root - INFO - Best cross-validation F1 Macro score: 0.2701922906247723
+[2024-11-01 10:28:44,010] 104 root - INFO - Validation Metrics: {'accuracy': 0.780952380952381, 'macro_f1': 0.22096672944130571, 'weighted_f1': 0.7265357367052283, 'macro_precision': 0.26735395189003436, 'macro_recall': 0.21378205128205127}
+[2024-11-01 10:28:44,027] 107 root - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00         5
+           1       0.00      0.00      0.00         3
+           2       0.00      0.00      0.00         2
+           3       0.00      0.00      0.00         2
+           4       0.80      0.31      0.44        13
+           5       0.80      0.97      0.88        80
+
+    accuracy                           0.78       105
+   macro avg       0.27      0.21      0.22       105
+weighted avg       0.71      0.78      0.73       105
+

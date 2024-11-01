@@ -1,0 +1,40 @@
+[2024-11-01 10:35:06,121] 28 root - INFO - Connected to MySQL database using SQLAlchemy
+[2024-11-01 10:35:06,121] 35 root - INFO - Starting data ingestion method
+[2024-11-01 10:35:06,121] 38 root - INFO - Fetching train data from MySQL
+[2024-11-01 10:35:06,153] 41 root - INFO - Train data fetched and converted to DataFrame
+[2024-11-01 10:35:06,168] 46 root - INFO - Train-validation split initiated
+[2024-11-01 10:35:06,168] 53 root - INFO - Fetching test data from MySQL
+[2024-11-01 10:35:06,184] 56 root - INFO - Test data fetched and converted to DataFrame
+[2024-11-01 10:35:06,184] 62 root - INFO - Data ingestion completed
+[2024-11-01 10:35:06,200] 67 root - INFO - Train and test data loaded successfully.
+[2024-11-01 10:35:06,200] 54 root - INFO - Preprocessor pipeline created successfully.
+[2024-11-01 10:35:06,200] 71 root - INFO - Preprocessing object obtained.
+[2024-11-01 10:35:06,200] 83 root - INFO - Applying preprocessing object to training and testing data.
+[2024-11-01 10:35:06,215] 91 root - INFO - Converting sparse training matrix to dense array
+[2024-11-01 10:35:06,215] 94 root - INFO - Converting sparse testing matrix to dense array
+[2024-11-01 10:35:06,215] 102 root - INFO - X_train_transformed shape: (418, 612)
+[2024-11-01 10:35:06,215] 103 root - INFO - y_train_arr shape: (418, 1)
+[2024-11-01 10:35:06,215] 104 root - INFO - X_test_transformed shape: (105, 612)
+[2024-11-01 10:35:06,215] 105 root - INFO - y_test_arr shape: (105, 1)
+[2024-11-01 10:35:06,215] 111 root - INFO - Final training array shape: (418, 613)
+[2024-11-01 10:35:06,215] 112 root - INFO - Final testing array shape: (105, 613)
+[2024-11-01 10:35:06,215] 119 root - INFO - Preprocessing object saved successfully.
+[2024-11-01 10:35:06,215] 31 root - INFO - Starting model training with a robust ensemble and hyperparameter tuning
+[2024-11-01 10:35:06,231] 120 root - INFO - Starting randomized search with cross-validation
+[2024-11-01 10:43:27,211] 127 root - INFO - Best Parameters: {'et__max_depth': 3, 'et__n_estimators': 278, 'gb__learning_rate': 0.09733844701287815, 'gb__max_depth': 9, 'gb__n_estimators': 260, 'lgbm__lambda_l1': 0.4174657649823085, 'lgbm__lambda_l2': 0.35377227120397503, 'lgbm__learning_rate': 0.05854188456861506, 'lgbm__max_depth': 12, 'lgbm__min_child_samples': 26, 'lgbm__min_split_gain': 0.4976785189691426, 'lgbm__n_estimators': 169, 'rf__max_depth': 7, 'rf__n_estimators': 267, 'xgb__learning_rate': 0.3199509028858241, 'xgb__max_depth': 8, 'xgb__n_estimators': 207}
+[2024-11-01 10:43:27,211] 128 root - INFO - Best cross-validation F1 Macro score: 0.25700716612495195
+[2024-11-01 10:43:27,274] 136 root - INFO - Validation Metrics: {'accuracy': 0.7619047619047619, 'macro_f1': 0.2005649717514124, 'weighted_f1': 0.7041700295937583, 'macro_precision': 0.23230240549828177, 'macro_recall': 0.19887820512820512}
+[2024-11-01 10:43:27,282] 139 root - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00         5
+           1       0.00      0.00      0.00         3
+           2       0.00      0.00      0.00         2
+           3       0.00      0.00      0.00         2
+           4       0.60      0.23      0.33        13
+           5       0.79      0.96      0.87        80
+
+    accuracy                           0.76       105
+   macro avg       0.23      0.20      0.20       105
+weighted avg       0.68      0.76      0.70       105
+

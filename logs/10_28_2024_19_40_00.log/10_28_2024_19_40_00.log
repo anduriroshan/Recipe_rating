@@ -1,0 +1,12 @@
+[2024-10-28 19:40:01,364] 28 root - INFO - Connected to MySQL database using SQLAlchemy
+[2024-10-28 19:40:01,364] 35 root - INFO - Starting data ingestion method
+[2024-10-28 19:40:01,364] 38 root - INFO - Fetching train data from MySQL
+[2024-10-28 19:40:01,379] 41 root - INFO - Train data fetched and converted to DataFrame
+[2024-10-28 19:40:01,395] 46 root - INFO - Train-validation split initiated
+[2024-10-28 19:40:01,395] 53 root - INFO - Fetching test data from MySQL
+[2024-10-28 19:40:01,414] 56 root - INFO - Test data fetched and converted to DataFrame
+[2024-10-28 19:40:01,414] 62 root - INFO - Data ingestion completed
+[2024-10-28 19:40:01,427] 69 root - INFO - Train and test data read successfully.
+[2024-10-28 19:40:01,427] 70 root - INFO - Obtaining preprocessing object.
+[2024-10-28 19:40:01,427] 53 root - INFO - Preprocessor pipeline created successfully.
+[2024-10-28 19:40:01,427] 108 root - ERROR - Error in initiate_data_transformation: "['Rating'] not found in axis"

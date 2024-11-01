@@ -18,7 +18,7 @@ def get_requirements(file_path):
     return requirements
 
 setup(
-    name = 'Crime_Project',
+    name = 'Recipe_rating',
     version = '0.0.1',
     author= 'Anduri Roshan',
     author_email='roshanandhuri@gmail.com',

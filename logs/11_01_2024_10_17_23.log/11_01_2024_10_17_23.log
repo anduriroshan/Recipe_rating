@@ -1,0 +1,130 @@
+[2024-11-01 10:17:23,586] 28 root - INFO - Connected to MySQL database using SQLAlchemy
+[2024-11-01 10:17:23,586] 35 root - INFO - Starting data ingestion method
+[2024-11-01 10:17:23,586] 38 root - INFO - Fetching train data from MySQL
+[2024-11-01 10:17:23,617] 41 root - INFO - Train data fetched and converted to DataFrame
+[2024-11-01 10:17:23,617] 46 root - INFO - Train-validation split initiated
+[2024-11-01 10:17:23,617] 53 root - INFO - Fetching test data from MySQL
+[2024-11-01 10:17:23,633] 56 root - INFO - Test data fetched and converted to DataFrame
+[2024-11-01 10:17:23,633] 62 root - INFO - Data ingestion completed
+[2024-11-01 10:17:23,649] 67 root - INFO - Train and test data loaded successfully.
+[2024-11-01 10:17:23,649] 54 root - INFO - Preprocessor pipeline created successfully.
+[2024-11-01 10:17:23,649] 71 root - INFO - Preprocessing object obtained.
+[2024-11-01 10:17:23,649] 83 root - INFO - Applying preprocessing object to training and testing data.
+[2024-11-01 10:17:23,664] 91 root - INFO - Converting sparse training matrix to dense array
+[2024-11-01 10:17:23,664] 94 root - INFO - Converting sparse testing matrix to dense array
+[2024-11-01 10:17:23,664] 102 root - INFO - X_train_transformed shape: (418, 612)
+[2024-11-01 10:17:23,664] 103 root - INFO - y_train_arr shape: (418, 1)
+[2024-11-01 10:17:23,664] 104 root - INFO - X_test_transformed shape: (105, 612)
+[2024-11-01 10:17:23,664] 105 root - INFO - y_test_arr shape: (105, 1)
+[2024-11-01 10:17:23,664] 111 root - INFO - Final training array shape: (418, 613)
+[2024-11-01 10:17:23,664] 112 root - INFO - Final testing array shape: (105, 613)
+[2024-11-01 10:17:23,664] 119 root - INFO - Preprocessing object saved successfully.
+[2024-11-01 10:17:23,664] 27 root - INFO - Starting model training with improved parameters and class balancing
+[2024-11-01 10:17:23,664] 35 root - INFO - Class distribution in training data: [ 45   2   3  16  41 311]
+[2024-11-01 10:17:23,664] 123 root - INFO - Starting grid search with cross-validation
+[2024-11-01 10:17:25,893] 154 root - ERROR - Error in initiate_model_trainer: 
+All the 6 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+2 fits failed with the following error:
+Traceback (most recent call last):
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\model_selection\_validation.py", line 729, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\base.py", line 1152, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\pipeline.py", line 329, in fit
+    Xt, yt = self._fit(X, y, routed_params)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\pipeline.py", line 265, in _fit
+    X, y, fitted_transformer = fit_resample_one_cached(
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\joblib\memory.py", line 312, in __call__
+    return self.func(*args, **kwargs)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\pipeline.py", line 1057, in _fit_resample_one
+    X_res, y_res = sampler.fit_resample(X, y, **params.get("fit_resample", {}))
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\base.py", line 208, in fit_resample
+    return super().fit_resample(X, y)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\base.py", line 112, in fit_resample
+    output = self._fit_resample(X, y)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\over_sampling\_smote\base.py", line 389, in _fit_resample
+    nns = self.nn_k_.kneighbors(X_class, return_distance=False)[:, 1:]
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\neighbors\_base.py", line 808, in kneighbors
+    raise ValueError(
+ValueError: Expected n_neighbors <= n_samples,  but n_samples = 1, n_neighbors = 4
+
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\model_selection\_validation.py", line 729, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\base.py", line 1152, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\pipeline.py", line 329, in fit
+    Xt, yt = self._fit(X, y, routed_params)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\pipeline.py", line 265, in _fit
+    X, y, fitted_transformer = fit_resample_one_cached(
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\joblib\memory.py", line 312, in __call__
+    return self.func(*args, **kwargs)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\pipeline.py", line 1057, in _fit_resample_one
+    X_res, y_res = sampler.fit_resample(X, y, **params.get("fit_resample", {}))
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\base.py", line 208, in fit_resample
+    return super().fit_resample(X, y)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\base.py", line 112, in fit_resample
+    output = self._fit_resample(X, y)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\over_sampling\_smote\base.py", line 389, in _fit_resample
+    nns = self.nn_k_.kneighbors(X_class, return_distance=False)[:, 1:]
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\neighbors\_base.py", line 808, in kneighbors
+    raise ValueError(
+ValueError: Expected n_neighbors <= n_samples,  but n_samples = 2, n_neighbors = 4
+
+--------------------------------------------------------------------------------
+2 fits failed with the following error:
+Traceback (most recent call last):
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\model_selection\_validation.py", line 729, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\base.py", line 1152, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\pipeline.py", line 329, in fit
+    Xt, yt = self._fit(X, y, routed_params)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\pipeline.py", line 265, in _fit
+    X, y, fitted_transformer = fit_resample_one_cached(
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\joblib\memory.py", line 312, in __call__
+    return self.func(*args, **kwargs)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\pipeline.py", line 1057, in _fit_resample_one
+    X_res, y_res = sampler.fit_resample(X, y, **params.get("fit_resample", {}))
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\base.py", line 208, in fit_resample
+    return super().fit_resample(X, y)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\base.py", line 112, in fit_resample
+    output = self._fit_resample(X, y)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\over_sampling\_smote\base.py", line 389, in _fit_resample
+    nns = self.nn_k_.kneighbors(X_class, return_distance=False)[:, 1:]
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\neighbors\_base.py", line 808, in kneighbors
+    raise ValueError(
+ValueError: Expected n_neighbors <= n_samples,  but n_samples = 1, n_neighbors = 6
+
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\model_selection\_validation.py", line 729, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\base.py", line 1152, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\pipeline.py", line 329, in fit
+    Xt, yt = self._fit(X, y, routed_params)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\pipeline.py", line 265, in _fit
+    X, y, fitted_transformer = fit_resample_one_cached(
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\joblib\memory.py", line 312, in __call__
+    return self.func(*args, **kwargs)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\pipeline.py", line 1057, in _fit_resample_one
+    X_res, y_res = sampler.fit_resample(X, y, **params.get("fit_resample", {}))
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\base.py", line 208, in fit_resample
+    return super().fit_resample(X, y)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\base.py", line 112, in fit_resample
+    output = self._fit_resample(X, y)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\imblearn\over_sampling\_smote\base.py", line 389, in _fit_resample
+    nns = self.nn_k_.kneighbors(X_class, return_distance=False)[:, 1:]
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\neighbors\_base.py", line 808, in kneighbors
+    raise ValueError(
+ValueError: Expected n_neighbors <= n_samples,  but n_samples = 2, n_neighbors = 6
+

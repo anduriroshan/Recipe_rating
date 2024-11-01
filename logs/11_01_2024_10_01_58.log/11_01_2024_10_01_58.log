@@ -1,0 +1,40 @@
+[2024-11-01 10:01:59,600] 28 root - INFO - Connected to MySQL database using SQLAlchemy
+[2024-11-01 10:01:59,600] 35 root - INFO - Starting data ingestion method
+[2024-11-01 10:01:59,600] 38 root - INFO - Fetching train data from MySQL
+[2024-11-01 10:01:59,720] 41 root - INFO - Train data fetched and converted to DataFrame
+[2024-11-01 10:01:59,735] 46 root - INFO - Train-validation split initiated
+[2024-11-01 10:01:59,737] 53 root - INFO - Fetching test data from MySQL
+[2024-11-01 10:01:59,753] 56 root - INFO - Test data fetched and converted to DataFrame
+[2024-11-01 10:01:59,753] 62 root - INFO - Data ingestion completed
+[2024-11-01 10:01:59,770] 67 root - INFO - Train and test data loaded successfully.
+[2024-11-01 10:01:59,770] 54 root - INFO - Preprocessor pipeline created successfully.
+[2024-11-01 10:01:59,770] 71 root - INFO - Preprocessing object obtained.
+[2024-11-01 10:01:59,770] 83 root - INFO - Applying preprocessing object to training and testing data.
+[2024-11-01 10:01:59,805] 91 root - INFO - Converting sparse training matrix to dense array
+[2024-11-01 10:01:59,805] 94 root - INFO - Converting sparse testing matrix to dense array
+[2024-11-01 10:01:59,805] 102 root - INFO - X_train_transformed shape: (418, 612)
+[2024-11-01 10:01:59,805] 103 root - INFO - y_train_arr shape: (418, 1)
+[2024-11-01 10:01:59,805] 104 root - INFO - X_test_transformed shape: (105, 612)
+[2024-11-01 10:01:59,805] 105 root - INFO - y_test_arr shape: (105, 1)
+[2024-11-01 10:01:59,805] 111 root - INFO - Final training array shape: (418, 613)
+[2024-11-01 10:01:59,805] 112 root - INFO - Final testing array shape: (105, 613)
+[2024-11-01 10:01:59,805] 119 root - INFO - Preprocessing object saved successfully.
+[2024-11-01 10:01:59,805] 25 root - INFO - Defining base models for Stacking Classifier
+[2024-11-01 10:01:59,805] 47 root - INFO - Starting grid search for hyperparameter tuning
+[2024-11-01 10:02:26,629] 56 root - INFO - Best Parameters: {'dt__max_depth': 7, 'lgbm__max_depth': 4, 'lgbm__n_estimators': 20, 'logreg__C': 1.0, 'xgb__max_depth': 7, 'xgb__n_estimators': 200}
+[2024-11-01 10:02:26,629] 57 root - INFO - Best Cross-Validation Score: nan
+[2024-11-01 10:02:26,629] 64 root - INFO - Validation Accuracy of the Stacking Classifier: 0.75
+[2024-11-01 10:02:26,661] 65 root - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00         5
+         1.0       0.00      0.00      0.00         3
+         2.0       0.00      0.00      0.00         2
+         3.0       0.00      0.00      0.00         2
+         4.0       0.00      0.00      0.00        13
+         5.0       0.77      0.99      0.86        80
+
+    accuracy                           0.75       105
+   macro avg       0.13      0.16      0.14       105
+weighted avg       0.58      0.75      0.66       105
+

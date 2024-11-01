@@ -1,0 +1,23 @@
+[2024-11-01 10:08:39,387] 28 root - INFO - Connected to MySQL database using SQLAlchemy
+[2024-11-01 10:08:39,387] 35 root - INFO - Starting data ingestion method
+[2024-11-01 10:08:39,387] 38 root - INFO - Fetching train data from MySQL
+[2024-11-01 10:08:39,433] 41 root - INFO - Train data fetched and converted to DataFrame
+[2024-11-01 10:08:39,435] 46 root - INFO - Train-validation split initiated
+[2024-11-01 10:08:39,445] 53 root - INFO - Fetching test data from MySQL
+[2024-11-01 10:08:39,456] 56 root - INFO - Test data fetched and converted to DataFrame
+[2024-11-01 10:08:39,460] 62 root - INFO - Data ingestion completed
+[2024-11-01 10:08:39,478] 67 root - INFO - Train and test data loaded successfully.
+[2024-11-01 10:08:39,478] 54 root - INFO - Preprocessor pipeline created successfully.
+[2024-11-01 10:08:39,478] 71 root - INFO - Preprocessing object obtained.
+[2024-11-01 10:08:39,478] 83 root - INFO - Applying preprocessing object to training and testing data.
+[2024-11-01 10:08:39,495] 91 root - INFO - Converting sparse training matrix to dense array
+[2024-11-01 10:08:39,495] 94 root - INFO - Converting sparse testing matrix to dense array
+[2024-11-01 10:08:39,495] 102 root - INFO - X_train_transformed shape: (418, 612)
+[2024-11-01 10:08:39,495] 103 root - INFO - y_train_arr shape: (418, 1)
+[2024-11-01 10:08:39,495] 104 root - INFO - X_test_transformed shape: (105, 612)
+[2024-11-01 10:08:39,495] 105 root - INFO - y_test_arr shape: (105, 1)
+[2024-11-01 10:08:39,495] 111 root - INFO - Final training array shape: (418, 613)
+[2024-11-01 10:08:39,495] 112 root - INFO - Final testing array shape: (105, 613)
+[2024-11-01 10:08:39,495] 119 root - INFO - Preprocessing object saved successfully.
+[2024-11-01 10:08:39,495] 110 root - INFO - Starting model training with improved parameters and class balancing
+[2024-11-01 10:08:39,495] 185 root - ERROR - Error in initiate_model_trainer: Cannot cast array data from dtype('float64') to dtype('int64') according to the rule 'safe'

@@ -1,0 +1,60 @@
+[2024-11-01 10:22:56,759] 28 root - INFO - Connected to MySQL database using SQLAlchemy
+[2024-11-01 10:22:56,759] 35 root - INFO - Starting data ingestion method
+[2024-11-01 10:22:56,759] 38 root - INFO - Fetching train data from MySQL
+[2024-11-01 10:22:56,776] 41 root - INFO - Train data fetched and converted to DataFrame
+[2024-11-01 10:22:56,793] 46 root - INFO - Train-validation split initiated
+[2024-11-01 10:22:56,793] 53 root - INFO - Fetching test data from MySQL
+[2024-11-01 10:22:56,809] 56 root - INFO - Test data fetched and converted to DataFrame
+[2024-11-01 10:22:56,809] 62 root - INFO - Data ingestion completed
+[2024-11-01 10:22:56,826] 67 root - INFO - Train and test data loaded successfully.
+[2024-11-01 10:22:56,826] 54 root - INFO - Preprocessor pipeline created successfully.
+[2024-11-01 10:22:56,826] 71 root - INFO - Preprocessing object obtained.
+[2024-11-01 10:22:56,826] 83 root - INFO - Applying preprocessing object to training and testing data.
+[2024-11-01 10:22:56,842] 91 root - INFO - Converting sparse training matrix to dense array
+[2024-11-01 10:22:56,842] 94 root - INFO - Converting sparse testing matrix to dense array
+[2024-11-01 10:22:56,842] 102 root - INFO - X_train_transformed shape: (418, 612)
+[2024-11-01 10:22:56,842] 103 root - INFO - y_train_arr shape: (418, 1)
+[2024-11-01 10:22:56,842] 104 root - INFO - X_test_transformed shape: (105, 612)
+[2024-11-01 10:22:56,842] 105 root - INFO - y_test_arr shape: (105, 1)
+[2024-11-01 10:22:56,857] 111 root - INFO - Final training array shape: (418, 613)
+[2024-11-01 10:22:56,857] 112 root - INFO - Final testing array shape: (105, 613)
+[2024-11-01 10:22:56,858] 119 root - INFO - Preprocessing object saved successfully.
+[2024-11-01 10:22:56,859] 27 root - INFO - Starting model training with advanced ensemble and hyperparameter tuning
+[2024-11-01 10:22:56,859] 99 root - INFO - Starting randomized search with cross-validation
+[2024-11-01 10:24:26,286] 129 root - ERROR - Error in initiate_model_trainer: 
+All the 150 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+150 fits failed with the following error:
+Traceback (most recent call last):
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\model_selection\_validation.py", line 729, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\base.py", line 1152, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\ensemble\_voting.py", line 349, in fit
+    return super().fit(X, transformed_y, sample_weight)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\ensemble\_voting.py", line 81, in fit
+    self.estimators_ = Parallel(n_jobs=self.n_jobs)(
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\utils\parallel.py", line 65, in __call__
+    return super().__call__(iterable_with_config)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\joblib\parallel.py", line 1918, in __call__
+    return output if self.return_generator else list(output)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\joblib\parallel.py", line 1847, in _get_sequential_output
+    res = func(*args, **kwargs)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\utils\parallel.py", line 127, in __call__
+    return self.function(*args, **kwargs)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\sklearn\ensemble\_base.py", line 36, in _fit_single_estimator
+    estimator.fit(X, y)
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\catboost\core.py", line 5245, in fit
+    self._fit(X, y, cat_features, text_features, embedding_features, None, graph, sample_weight, None, None, None, None, baseline, use_best_model,
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\catboost\core.py", line 2395, in _fit
+    train_params = self._prepare_train_params(
+  File "c:\Users\rosha\Downloads\Recipe_rating\venv\lib\site-packages\catboost\core.py", line 2321, in _prepare_train_params
+    _check_train_params(params)
+  File "_catboost.pyx", line 6583, in _catboost._check_train_params
+  File "_catboost.pyx", line 6605, in _catboost._check_train_params
+_catboost.CatBoostError: catboost/private/libs/options/json_helper.h:41: Can't parse parameter "class_weights" with value: "balanced"
+
