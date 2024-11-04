@@ -19,14 +19,14 @@ predict_pipeline = PredictPipeline()
 # Option to manually enter data
 st.header("Manual Input")
 with st.form("manual_input_form"):
-    ID = st.number_input("ID", min_value=0, step=1)
-    RecipeNumber = st.text_input("Recipe Number")
-    UserReputation = st.number_input("User Reputation", min_value=0)
-    ThumbsUpCount = st.number_input("Thumbs Up Count", min_value=0)
-    ThumbsDownCount = st.number_input("Thumbs Down Count", min_value=0)
-    BestScore = st.number_input("Best Score", min_value=0)
-    ReplyCount = st.number_input("Reply Count", min_value=0)
-    Recipe_Review = st.text_area("Recipe Review")
+    ID = st.number_input("ID", min_value=0, step=1, help="Example: 86")
+    RecipeNumber = st.text_input("Recipe Number", help="Example: 45")
+    UserReputation = st.number_input("User Reputation", min_value=0, help="Example: 1")
+    ThumbsUpCount = st.number_input("Thumbs Up Count", min_value=0, help="Example: 0")
+    ThumbsDownCount = st.number_input("Thumbs Down Count", min_value=0, help="Example: 0")
+    BestScore = st.number_input("Best Score", min_value=0, help="Example: 100")
+    ReplyCount = st.number_input("Reply Count", min_value=0, help="Example: 0")
+    Recipe_Review = st.text_area("Recipe Review", help="Example: This was so good!! The pumpkin was perfect as a thickening agent. I'm putting this on my Halloween dinner party menu!!")
     
     submit_manual = st.form_submit_button("Predict Manually")
     
