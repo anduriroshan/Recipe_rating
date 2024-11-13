@@ -1,5 +1,5 @@
 # Recipe_rating
-
+Try it on : https://reciperating.streamlit.app/
 ## Project Overview
 - This project aims to build a machine learning model to predict the rating of recipes based on various features, such as recipe metadata, user engagement, and textual reviews. 
 
