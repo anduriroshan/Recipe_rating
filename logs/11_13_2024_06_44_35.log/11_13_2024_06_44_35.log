@@ -1,0 +1,25 @@
+[2024-11-13 06:44:35,334] 16 root - INFO - Got those var
+[2024-11-13 06:44:35,457] 33 root - INFO - Connected to MongoDB database
+[2024-11-13 06:44:35,458] 40 root - INFO - Starting data ingestion method
+[2024-11-13 06:44:35,458] 43 root - INFO - Fetching train data from MongoDB
+[2024-11-13 06:44:39,219] 47 root - INFO - Train data fetched and converted to DataFrame
+[2024-11-13 06:44:39,359] 52 root - INFO - Train-validation split initiated
+[2024-11-13 06:44:39,520] 59 root - INFO - Fetching test data from MongoDB
+[2024-11-13 06:44:39,982] 63 root - INFO - Test data fetched and converted to DataFrame
+[2024-11-13 06:44:40,060] 69 root - INFO - Data ingestion completed
+[2024-11-13 06:44:40,257] 73 root - INFO - MongoDB connection closed
+[2024-11-13 06:44:40,334] 67 root - INFO - Train and test data loaded successfully.
+[2024-11-13 06:44:40,338] 54 root - INFO - Preprocessor pipeline created successfully.
+[2024-11-13 06:44:40,339] 84 root - INFO - Preprocessing object obtained.
+[2024-11-13 06:44:40,340] 96 root - INFO - Applying preprocessing object to training and testing data.
+[2024-11-13 06:44:40,603] 104 root - INFO - Converting sparse training matrix to dense array
+[2024-11-13 06:44:40,759] 107 root - INFO - Converting sparse testing matrix to dense array
+[2024-11-13 06:44:40,806] 115 root - INFO - X_train_transformed shape: (10908, 3850)
+[2024-11-13 06:44:40,806] 116 root - INFO - y_train_arr shape: (10908, 1)
+[2024-11-13 06:44:40,806] 117 root - INFO - X_test_transformed shape: (2728, 3850)
+[2024-11-13 06:44:40,806] 118 root - INFO - y_test_arr shape: (2728, 1)
+[2024-11-13 06:44:41,171] 124 root - INFO - Final training array shape: (10908, 3851)
+[2024-11-13 06:44:41,171] 125 root - INFO - Final testing array shape: (2728, 3851)
+[2024-11-13 06:44:41,173] 132 root - INFO - Preprocessing object saved successfully.
+[2024-11-13 06:44:41,198] 29 root - INFO - Starting model training with a robust ensemble
+[2024-11-13 06:44:41,199] 95 root - INFO - Fitting the ensemble model

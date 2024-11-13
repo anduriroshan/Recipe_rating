@@ -1,6 +1,6 @@
 import sys
 from dataclasses import dataclass
-import numpy as np 
+import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
@@ -65,6 +65,19 @@ class DataTransformation:
             test_df = pd.read_csv(test_path)
 
             logging.info("Train and test data loaded successfully.")
+            # Define columns
+            numerical_columns = ["ID", "UserReputation", "ThumbsUpCount", "ThumbsDownCount", "BestScore"]
+            categorical_columns = ["RecipeNumber", "ReplyCount"]
+            text_column = "Recipe_Review"
+            target_column_name = "Rating"
+            columns_to_drop = ["RecipeName", "CommentID", "UserID", "CreationTimestamp"]
+            # Handle missing values
+            train_df['Recipe_Review'].fillna('missing', inplace=True)
+            test_df['Recipe_Review'].fillna('missing', inplace=True)
+            train_df[numerical_columns] = train_df[numerical_columns].fillna(0)
+            test_df[numerical_columns] = test_df[numerical_columns].fillna(0)
+            train_df[categorical_columns] = train_df[categorical_columns].fillna('missing')
+            test_df[categorical_columns] = test_df[categorical_columns].fillna('missing')
 
             # Obtain preprocessing object
             preprocessing_obj = self.get_data_transformer_object()

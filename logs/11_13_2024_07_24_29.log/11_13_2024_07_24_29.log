@@ -1,0 +1,40 @@
+[2024-11-13 07:24:30,381] 16 root - INFO - Got those var
+[2024-11-13 07:24:30,558] 33 root - INFO - Connected to MongoDB database
+[2024-11-13 07:24:30,558] 40 root - INFO - Starting data ingestion method
+[2024-11-13 07:24:30,559] 43 root - INFO - Fetching train data from MongoDB
+[2024-11-13 07:24:34,692] 47 root - INFO - Train data fetched and converted to DataFrame
+[2024-11-13 07:24:34,927] 52 root - INFO - Train-validation split initiated
+[2024-11-13 07:24:35,130] 59 root - INFO - Fetching test data from MongoDB
+[2024-11-13 07:24:35,775] 63 root - INFO - Test data fetched and converted to DataFrame
+[2024-11-13 07:24:35,838] 69 root - INFO - Data ingestion completed
+[2024-11-13 07:24:36,035] 73 root - INFO - MongoDB connection closed
+[2024-11-13 07:24:36,155] 67 root - INFO - Train and test data loaded successfully.
+[2024-11-13 07:24:36,166] 54 root - INFO - Preprocessor pipeline created successfully.
+[2024-11-13 07:24:36,167] 84 root - INFO - Preprocessing object obtained.
+[2024-11-13 07:24:36,170] 96 root - INFO - Applying preprocessing object to training and testing data.
+[2024-11-13 07:24:37,001] 104 root - INFO - Converting sparse training matrix to dense array
+[2024-11-13 07:24:37,232] 107 root - INFO - Converting sparse testing matrix to dense array
+[2024-11-13 07:24:37,304] 115 root - INFO - X_train_transformed shape: (10908, 3850)
+[2024-11-13 07:24:37,304] 116 root - INFO - y_train_arr shape: (10908, 1)
+[2024-11-13 07:24:37,305] 117 root - INFO - X_test_transformed shape: (2728, 3850)
+[2024-11-13 07:24:37,305] 118 root - INFO - y_test_arr shape: (2728, 1)
+[2024-11-13 07:24:37,656] 124 root - INFO - Final training array shape: (10908, 3851)
+[2024-11-13 07:24:37,656] 125 root - INFO - Final testing array shape: (2728, 3851)
+[2024-11-13 07:24:37,660] 132 root - INFO - Preprocessing object saved successfully.
+[2024-11-13 07:24:37,692] 29 root - INFO - Starting model training with a robust ensemble
+[2024-11-13 07:24:37,692] 95 root - INFO - Fitting the ensemble model
+[2024-11-13 08:00:31,406] 103 root - INFO - Validation Metrics: {'accuracy': 0.7855571847507331, 'macro_f1': 0.35662870628059595, 'weighted_f1': 0.739702859742788, 'macro_precision': 0.4708791524604324, 'macro_recall': 0.32129478027610753}
+[2024-11-13 08:00:31,415] 106 root - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.70      0.22      0.34       272
+           1       0.55      0.42      0.47        55
+           2       0.12      0.05      0.07        38
+           3       0.21      0.11      0.15        53
+           4       0.42      0.14      0.22       242
+           5       0.82      0.97      0.89      2068
+
+    accuracy                           0.79      2728
+   macro avg       0.47      0.32      0.36      2728
+weighted avg       0.74      0.79      0.74      2728
+

@@ -1,0 +1,15 @@
+[2024-11-13 06:42:36,569] 16 root - INFO - Got those var
+[2024-11-13 06:42:36,612] 33 root - INFO - Connected to MongoDB database
+[2024-11-13 06:42:36,613] 40 root - INFO - Starting data ingestion method
+[2024-11-13 06:42:36,613] 43 root - INFO - Fetching train data from MongoDB
+[2024-11-13 06:42:40,564] 47 root - INFO - Train data fetched and converted to DataFrame
+[2024-11-13 06:42:40,717] 52 root - INFO - Train-validation split initiated
+[2024-11-13 06:42:40,862] 59 root - INFO - Fetching test data from MongoDB
+[2024-11-13 06:42:41,310] 63 root - INFO - Test data fetched and converted to DataFrame
+[2024-11-13 06:42:41,355] 69 root - INFO - Data ingestion completed
+[2024-11-13 06:42:41,553] 73 root - INFO - MongoDB connection closed
+[2024-11-13 06:42:41,646] 67 root - INFO - Train and test data loaded successfully.
+[2024-11-13 06:42:41,646] 54 root - INFO - Preprocessor pipeline created successfully.
+[2024-11-13 06:42:41,646] 71 root - INFO - Preprocessing object obtained.
+[2024-11-13 06:42:41,648] 83 root - INFO - Applying preprocessing object to training and testing data.
+[2024-11-13 06:42:41,713] 124 root - ERROR - Error in initiate_data_transformation: np.nan is an invalid document, expected byte or unicode string.
